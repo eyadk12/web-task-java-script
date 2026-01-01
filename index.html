@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Todo Input</h1>
+        <div class="todo-input">
+            <div class="input-group">
+                <div class="input-group-text">
+                    <i class="fas fa-book"></i>
+                </div>
+                <input type="text" id="userInput" placeholder="New Todo">
+            </div>
+            <span class="error" id="inputError"></span>
+            <button id="submitBtn">Add new task</button>
+        </div>
+        <h1>Todo List</h1>
+        <div class="filter-buttons">
+            <button class="active" data-type="all">All</button>
+            <button data-type="done">Done</button>
+            <button data-type="todo">Todo</button>
+        </div>
+        <ul id="itemsList" class="todo-list">No Tasks 📝</ul>
+        <div class="footer-buttons">
+            <button id="removeCompletedBtn">Delete done tasks</button>
+            <button id="removeAllBtn">Delete all tasks</button>
+        </div>
+    </div>
+
+    
+    <div class="modal" id="modifyModal">
+        <div class="modal-content">
+            <h2>Rename Task</h2>
+            <input type="text" id="modifyInput">
+            <span class="error" id="modifyError"></span>
+            <div class="modal-actions">
+                <button class="save" id="applyBtn">Save</button>
+                <button class="cancel" id="dismissEditBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal" id="destroyModal">
+        <div class="modal-content">
+            <h2>Delete Task</h2>
+            <p>Are you sure you want to delete this task?</p>
+            <div class="modal-actions">
+                <button class="confirm" id="approveDestroyBtn">Confirm</button>
+                <button class="cancel" id="dismissDestroyBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal" id="wipeAllModal">
+        <div class="modal-content">
+            <h2>Delete All Tasks</h2>
+            <p>Are you sure you want to delete all tasks?</p>
+            <div class="modal-actions">
+                <button class="confirm" id="approveWipeBtn">Confirm</button>
+                <button class="cancel" id="dismissWipeBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal" id="purgeModal">
+        <div class="modal-content">
+            <h2>Delete All Done Tasks</h2>
+            <p>Are you sure you want to delete all completed tasks?</p>
+            <div class="modal-actions">
+                <button class="confirm" id="approvePurgeBtn">Confirm</button>
+                <button class="cancel" id="dismissPurgeBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
